@@ -1,0 +1,5 @@
+tasks:
+  - name: "hugo"
+    command: |
+      brew install hugo
+      # hugo server
