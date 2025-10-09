@@ -1,0 +1,20 @@
+{
+  "name": "freedomfromporn",
+  "version": "1.0.0",
+  "description": "This is a website that helps people find resources that help to fight addiction to porn. We are open sourcing this so that anyone can clone and use all the resouces.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev\"",
+    "build": "tinacms build && next build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tinacms": "^2.9.0"
+  },
+  "devDependencies": {
+    "@tinacms/cli": "^1.11.0"
+  }
+}
