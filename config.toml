@@ -2,7 +2,7 @@ baseURL = 'https://freedom.restoringeden.de/'
 languageCode = 'en-us'
 title = 'PA2BA | Freedom From Porn'
 subtitle = 'PA2BA | Freedom From Porn'
-theme = "p2b"
+theme = ["p2b", "ananke"]
 resourceDir = "resources"
 
 DefaultContentLanguage = "en"

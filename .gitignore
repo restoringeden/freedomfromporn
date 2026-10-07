@@ -2,7 +2,7 @@
 node_modules/
 public/
 resources/
-themes/p2b/
+
 *.swp
 *.out
 *.log
