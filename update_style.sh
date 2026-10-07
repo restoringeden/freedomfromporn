@@ -1,0 +1,88 @@
+#!/bin/bash
+CSS_FILE="themes/p2b/assets/ananke/css/main.css"
+if [ ! -f "\$CSS_FILE" ]; then
+  mkdir -p themes/p2b/assets/ananke/css
+  touch "\$CSS_FILE"
+fi
+
+cat << 'CSS_EOF' > "\$CSS_FILE"
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --primary: #0e7490; /* primary teal */
+  --primary-dark: #005a71;
+  --primary-light: #81d1f0;
+
+  --secondary: #f59e0b; /* amber gold accent */
+
+  --background: #f8f9ff;
+  --surface: #ffffff;
+  --surface-dim: #cbdbf5;
+
+  --on-background: #0f172a; /* deep slate navy */
+  --on-surface: #0b1c30;
+  --on-surface-variant: #3f484c;
+
+  --neutral-muted: #64748b;
+  --neutral-border: #e2e8f0;
+
+  --font-primary: 'Plus Jakarta Sans', sans-serif;
+  --font-secondary: 'Source Serif 4', serif;
+
+  --radius: 0.5rem;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--background);
+  color: var(--on-background);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  color: var(--on-surface);
+}
+
+.editorial-title {
+  font-family: var(--font-secondary);
+}
+
+a {
+  color: var(--primary);
+}
+a:hover {
+  color: var(--primary-dark);
+}
+
+.bg-dark-gray, .bg-mid-gray, .bg-light-gray {
+  background-color: var(--surface) !important;
+  color: var(--on-background) !important;
+}
+
+.bg-black {
+    background-color: var(--primary) !important;
+}
+
+header, footer {
+    background-color: var(--primary) !important;
+    color: white !important;
+}
+
+header a, footer a {
+    color: white !important;
+}
+
+.ananke-socials {
+    fill: white !important;
+}
+
+article {
+  background-color: var(--surface);
+  border-radius: var(--radius);
+}
+
+.pb3-m, .pb4-l {
+    background-color: var(--background) !important;
+}
+
+CSS_EOF
