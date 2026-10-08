@@ -1,5 +1,5 @@
 #!/bin/bash
-CSS_FILE="themes/p2b/assets/ananke/css/main.css"
+CSS_FILE="themes/p2b/assets/ananke/css/_p2b_custom.css"
 if [ ! -f "\$CSS_FILE" ]; then
   mkdir -p themes/p2b/assets/ananke/css
   touch "\$CSS_FILE"
