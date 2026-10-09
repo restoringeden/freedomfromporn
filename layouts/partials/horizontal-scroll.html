@@ -1,0 +1,7 @@
+<div class="horizontal-scroll-container w-100 overflow-x-auto overflow-y-hidden pb4 pt2" style="scrollbar-width: thin;">
+  <div class="flex flex-nowrap pl3 pr3" style="width: max-content;">
+    {{ range . }}
+      {{ partial "card.html" . }}
+    {{ end }}
+  </div>
+</div>

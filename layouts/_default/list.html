@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
+      <h1 class="f1 fw6 editorial-title">{{ .Title }}</h1>
+      {{- .Content -}}
+    </section>
+    <section class="w-100 center mt5" style="max-width: 1280px;">
+      <div class="flex flex-wrap mx-n2 justify-center">
+      {{ range .Paginator.Pages }}
+        <div class="px2 mb4">
+          {{ partial "card.html" . }}
+        </div>
+      {{ end }}
+      </div>
+    </section>
+    {{- template "_internal/pagination.html" . -}}
+  </article>
+{{ end }}
