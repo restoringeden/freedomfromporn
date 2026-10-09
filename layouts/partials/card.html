@@ -1,0 +1,42 @@
+{{ $featured_image := partials.Include "func/GetFeaturedImage.html" . }}
+{{ $show_date := partials.Include "func/ShowDate.html" . }}
+<article class="p2b-card relative flex flex-column bg-white br3 ba b--light-gray overflow-hidden shadow-1 hover-shadow-2 transition-transform hover-translate-y-2 ma2 w-100" style="min-width: 300px; max-width: 350px;">
+  {{ if $featured_image }}
+  <a href="{{.RelPermalink}}" class="db h5 overflow-hidden">
+    <img src="{{ $featured_image }}" class="img w-100 h-100 object-cover grow" alt="image from {{ .Title }}" loading="lazy">
+  </a>
+  {{ end }}
+  <div class="pa4 flex flex-column justify-between flex-grow-1">
+    <div>
+      {{ if or $show_date .Params.categories }}
+      <div class="flex items-center mb2 flex-wrap">
+        {{ if $show_date }}
+        <time class="f7 gray mr3 ttu b" {{ fmt.Printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safe.HTMLAttr }}>
+          {{- .Date | time.Format (compare.Default "January 2, 2006" .Site.Params.date_format) -}}
+        </time>
+        {{ end }}
+        {{ range .Params.categories }}
+        <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" class="f7 bg-light-blue dark-blue br-pill ph2 pv1 mr2 mb1 link hover-bg-blue hover-white ttu b">{{ . }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+      <h2 class="f3 fw6 mt0 mb3 lh-title">
+        <a href="{{.RelPermalink}}" class="color-inherit dim link">
+          {{ .Title }}
+        </a>
+      </h2>
+      <div class="f5 lh-copy gray mb3 nested-links line-clamp-2">
+        {{ .Summary }}
+      </div>
+    </div>
+
+    <div class="flex items-center justify-between mt-auto">
+      {{ with .Params.author | compare.Default .Site.Params.author }}
+      <p class="f6 gray mv0 b">{{ . }}</p>
+      {{ end }}
+      <a href="{{.RelPermalink}}" class="f6 link blue hover-dark-blue b inline-flex items-center">
+        Read Article <span class="ml1">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</article>

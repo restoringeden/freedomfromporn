@@ -86,3 +86,67 @@ article {
 }
 
 CSS_EOF
+
+cat << 'CSS_EOF' >> "$CSS_FILE"
+
+/* Horizontal Scroll Container */
+.horizontal-scroll-container {
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+.horizontal-scroll-container > div > * {
+  scroll-snap-align: start;
+}
+
+/* Utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.object-cover {
+  object-fit: cover;
+}
+
+/* Card Enhancements */
+.hover-translate-y-2 {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-translate-y-2:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(14, 116, 144, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+}
+
+.mx-n2 {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+.px2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.bg-light-blue {
+    background-color: #ecfeff;
+}
+.dark-blue {
+    color: var(--primary);
+}
+.hover-bg-blue:hover {
+    background-color: var(--primary);
+}
+.blue {
+    color: var(--primary);
+}
+.hover-dark-blue:hover {
+    color: var(--primary-dark);
+}
+
+/* Typography Overrides */
+.f1 { font-size: 3rem; }
+.f2 { font-size: 2.25rem; }
+.f3 { font-size: 1.5rem; }
+
+CSS_EOF

@@ -1,0 +1,7 @@
+{{ $show_date := true }}
+{{ if isset .Params "show_date" }}
+  {{ $show_date = .Params.show_date }}
+{{ else if isset .Site.Params "show_date" }}
+  {{ $show_date = .Site.Params.show_date }}
+{{ end }}
+{{ return $show_date }}
